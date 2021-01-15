@@ -18,7 +18,6 @@
 - has_many :favorites
 - has_many :files
 - has_many :articles
-- has_many :todos
 - has_many :goodjobs
 - has_many :followers
 
@@ -32,26 +31,13 @@
 | info            | text       | null: false                    |
 | favorite_counts | integer    |                                |
 | goodjob_counts  | integer    |                                |
-|                 | integer    |                                |
+| type            | integer    |                                |
 
 ### Association
 - belongs_to :user
-- has_many :todos
 - belongs_to :goojob
 - belongs_to :file
 - belongs_to :favorite
-
-## todos テーブル
-
-| Column          | Type       | Options                        |
-| --------------- | -----------| ------------------------------ |
-| tweet           | text       | null: false                    |
-| user            | references | foreign_key: true              |
-| article         | references | foreign_key: true              |
-
-### Association
-- belongs_to :user
-- belongs_to :article
 
 ## goodjobs テーブル
 
