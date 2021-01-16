@@ -1,0 +1,28 @@
+<%= render "shared/header"%>
+
+<%= javascript_pack_tag 'article' %>
+
+<div class="margin">
+</div>
+<%= form_with model: @article, url: article_path, local: true do |f| %>
+  <%=render 'shared/error_messages', model: f.object %>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">主題</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_area :name, class:"input-default", id:"article-name", placeholder:"主題を記入", maxlength:"40" %>
+  </div>
+
+    <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">本文</label>
+    </div>
+    <%= f.text_area :name, class:"input-default", id:"editor", placeholder:"本文を記入" %>
+  </div>
+
+  <div class='register-btn'>
+    <%= f.submit "登録" ,class:"register-red-btn" %>
+  </div>
+
+<% end %>
