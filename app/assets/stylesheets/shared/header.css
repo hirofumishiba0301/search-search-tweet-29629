@@ -33,6 +33,9 @@
   font-weight: 900;
 }
 
+.margin{
+  height: 10vh;
+}
 
 .nav {
   display: flex;
@@ -54,6 +57,7 @@
   display: block;
   font-size: medium;
   margin-right: 1vw;
+  padding-inline: 1vw;
   text-decoration: none;
   background-color: darkred;
   border: 1.5px solid #ffffff;
@@ -62,16 +66,15 @@
 }
 
 .purchase-nickname-text {
-  color: darkred;
+  color: white;
   display: block;
-  font-size: 25px;
-  height: 7vh;
+  font-size: medium;
+  margin-right: 1vw;
+  padding-inline: 1vw;
   text-decoration: none;
-  margin-bottom: 5px;
-  margin-right: 5px;
-  padding: 5px;
-  text-decoration: none;
+  background-color: darkred;
   border: 1.5px solid #ffffff;
+  text-decoration: none;
   text-align: center;
 }
 

@@ -1,5 +1,6 @@
 <%= render "shared/header"%>
-
+<div class="margin">
+</div>
 <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
 <div class='form-wrap'>
   <div class='form-header'>
@@ -14,7 +15,7 @@
       <label class="form-text">ユーザーネーム</label>
       <span class="indispensable">必須</span>
     </div>
-    <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"例) Good太郎", maxlength:"40" %>
+    <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"例) Search太郎", maxlength:"40" %>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
@@ -38,6 +39,20 @@
     </div>
     <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"同じパスワードを入力して下さい" %>
   </div>
+  <%# プロフィール画像 %>
+     <div class="form-group">
+      <div class='form-text-wrap'>
+      <label class="form-text">プロフィール画像</label>
+        <span class="indispensable">＊必須ではない</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"video-image" %>
+      </div>
+    </div>
+  <%# /プロフィール画像 %>
   <div class="form-group">
     <p class='form-info-header'>
       本人確認
