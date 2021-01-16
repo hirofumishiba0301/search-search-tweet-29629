@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  
+  has_many :articles
   has_one_attached :image
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
