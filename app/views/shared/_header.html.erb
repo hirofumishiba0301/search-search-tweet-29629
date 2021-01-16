@@ -1,0 +1,23 @@
+<%# CSS・・・assets/stylesheets/shared/header.css %>
+<div class='top-page-header'>
+  <div class='main-bar-contents'>
+    <%= link_to 'SearchTweet', articles_path,method: :get, class:"main-icon" %>
+  </div>
+  <%# ヘッダー操作ボタン %>
+ <div class='nav'>
+    <ul class='purchase-btn'>
+        <% if user_signed_in? && current_user.id %>
+          <li><%#= link_to "+投稿", new_video_path, method: :get , class: "purchase-btn-text"%> </li> 
+          <li><%= link_to '検索', articles_path, method: :get, class: "purchase-btn-text" %>
+          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete , class: "purchase-btn-text"%> </li> 
+          <li><%= link_to current_user.nickname,'#', class: "purchase-nickname-text" %></li> 
+        <% else %>
+          <li><%= link_to 'ログイン', new_user_session_path,method: :get, class: "purchase-btn-text" %></li>
+          <li><%= link_to '新規登録', new_user_registration_path,method: :get , class: "purchase-btn-text" %></li>
+          <li><%= link_to '検索', articles_path, method: :get, class: "purchase-btn-text" %>
+          </li> 
+        <% end %>
+    </ul>
+  </div>
+<%# /ヘッダー操作ボタン %>
+</div>

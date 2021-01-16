@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box;
+}
+
+
+.nav {
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 1vh 0;
+}
+
+.top-page-header {
+  width: 100vw;
+  background-color: darkred;
+  padding: 1vh ;
+  display: flex;
+  justify-content: space-between;
+  /*flex-direction: column;*/
+  position: fixed;
+  border-bottom: 1.5px solid rgb(109, 109, 109);
+}
+
+.main-icon {
+  text-decoration: none;
+  /*justify-content: center;*/
+  width: 30vw;
+  height: 20vh;
+  font-size: xx-large;
+  color: #ffffff;
+  font-weight: 900;
+}
+
+.margin{
+  height: 10vh;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.purchase-btn {
+  width: 50vw;
+  justify-content: flex-end;
+  right: 0.5vw;
+  display: flex;
+  position: fixed;
+  list-style: none;
+}
+
+.purchase-btn-text {
+  color: white;
+  display: block;
+  font-size: medium;
+  margin-right: 1vw;
+  padding-inline: 1vw;
+  text-decoration: none;
+  background-color: darkred;
+  border: 1.5px solid #ffffff;
+  text-decoration: none;
+  text-align: center;
+}
+
+.purchase-nickname-text {
+  color: white;
+  display: block;
+  font-size: medium;
+  margin-right: 1vw;
+  padding-inline: 1vw;
+  text-decoration: none;
+  background-color: darkred;
+  border: 1.5px solid #ffffff;
+  text-decoration: none;
+  text-align: center;
+}
+
+
+.logout {
+  text-decoration: none;
+  color: #333333;
+}
+
+.login {
+  text-decoration: none;
+  line-height: 32px;
+  margin-right: 3vw;
+  color: #333333;
+}
+
+.sign-up {
+  text-decoration: none;
+  color: #333333;
+}
+
+
