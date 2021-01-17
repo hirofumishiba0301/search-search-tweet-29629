@@ -1,1 +1,19 @@
 <%= render "shared/header"%>
+<div class="margin">
+</div>
+<% if @articles.present? %>
+  <div class='article-contents'>
+    <% @articles.each do |article| %>
+      <div class='article-content'>
+        <%= link_to article_path(article.id),method: :get do %>
+          <div class='article-info'>
+            <h1><%=article.user.nickname  %></h1>
+          </div>
+          <div class='article-info'>
+            <h1><%=article.name  %></h1>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

@@ -60,3 +60,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
 gem 'devise'
+gem 'redcarpet', '~> 2.3.0'
+gem 'coderay'

@@ -4,7 +4,7 @@
 
 <div class="margin">
 </div>
-<%= form_with model: @article, url: article_path, local: true do |f| %>
+<%= form_with model: @article, url: articles_path, method: :post, local: true do |f| %>
   <%=render 'shared/error_messages', model: f.object %>
   <div class="form-group">
     <div class='form-text-wrap'>
@@ -18,11 +18,11 @@
     <div class='form-text-wrap'>
       <label class="form-text">本文</label>
     </div>
-    <%= f.text_area :name, class:"input-default", id:"editor", placeholder:"本文を記入" %>
+    <%= f.text_area :text, class:"input-default", id:"editor", placeholder:"本文を記入" %>
   </div>
 
   <div class='register-btn'>
-    <%= f.submit "登録" ,class:"register-red-btn" %>
+    <%= f.submit "投稿" ,class:"register-red-btn" %>
   </div>
 
 <% end %>
