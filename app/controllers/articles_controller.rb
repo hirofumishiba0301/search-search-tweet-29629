@@ -43,6 +43,11 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def attach
+    attachment = Attachment.create! image: params[:image]
+    render json: { filename: url_for(attachment.image) }
+  end
+
   private
 
   def set_article
@@ -50,7 +55,7 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:picture, :name, :text, :progress).merge(user_id: current_user.id)
+    params.require(:article).permit(:name, :text, :progress).merge(user_id: current_user.id)
   end
 
 end
