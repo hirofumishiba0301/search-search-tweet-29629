@@ -20,9 +20,10 @@
     </div>
     <%= f.text_area :text, class:"input-default", id:"editor", placeholder:"本文を記入" %>
   </div>
-
-  <div class='register-btn'>
-    <%= f.submit "投稿" ,class:"register-red-btn" %>
+  <div class="form-btn">
+    <%=f.select :progress, options_for_select_from_enum(Article, :progress) %>
+    <div class='register-btn'>
+      <%= f.submit "投稿" ,class:"register-red-btn" %>
+    </div>
   </div>
-
 <% end %>

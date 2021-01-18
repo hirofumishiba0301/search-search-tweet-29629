@@ -8,6 +8,7 @@
         <%= link_to article_path(article.id),method: :get do %>
           <div class='article-info'>
             <h1><%=article.user.nickname  %></h1>
+            <span><%= l article.created_at %></span>
           </div>
           <div class='article-info'>
             <h1><%=article.name  %></h1>
