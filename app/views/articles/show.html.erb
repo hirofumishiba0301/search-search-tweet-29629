@@ -1,17 +1,35 @@
 <%= render "shared/header"%>
 <div class="margin">
 </div>
-
-<% if @article.present? %>
-      <div class='article-content'>
-          <div class='article-name'>
-            <h1><%=@article.name  %></h1>
+<div class='back'>
+  <div class='show-btns'>
+    <ul class='show-btn'>
+      <% if @article.user.id || current_user.id %>
+        <li><%= link_to "編集", edit_article_path, method: :get , class: "purchase-btn-text"%> </li> 
+        <li><%= link_to '削除', article_path, method: :delete, class: "purchase-btn-text" %>
+        <li><%= link_to "good", '#', method: :delete , class: "purchase-btn-text"%> </li> 
+        <li><%= link_to "栞",'#', class: "purchase-nickname-text" %></li> 
+      <% else %>
+        <li><%= link_to "good", '#', method: :delete , class: "purchase-btn-text"%> </li> 
+        <li><%= link_to "栞",'#', class: "purchase-nickname-text" %></li> 
+      <% end %>
+    </ul>
+  </div>
+  <div class='article-contents'>
+    <% if @article.present? %>
+          <div class='article-contents'>
+              <div class='article-name'>
+                <h1><%=@article.name  %></h1>
+              </div>
+                <div class='article-username'>
+                <h1><%=@article.user.nickname  %></h1>
+              </div>
+              <div class='article-text' >
+                <p><%= markdown(@article.text).html_safe %></p>
+              </div>
           </div>
-            <div class='article-username'>
-            <h1><%=@article.user.nickname  %></h1>
-          </div>
-          <div class='article-text' >
-            <p><%= markdown(@article.text).html_safe %></p>
-          </div>
-      </div>
-<% end %>
+    <% end %>
+  </div>
+  <div class='show-title'>
+  </div>
+</div>

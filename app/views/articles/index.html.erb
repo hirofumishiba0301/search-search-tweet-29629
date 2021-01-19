@@ -1,20 +1,24 @@
 <%= render "shared/header"%>
 <div class="margin">
 </div>
-<% if @articles.present? %>
-  <div class='article-contents'>
-    <% @articles.each do |article| %>
-      <div class='article-content'>
-        <%= link_to article_path(article.id),method: :get do %>
-          <div class='article-info'>
-            <h1><%=article.user.nickname  %></h1>
-            <span><%= l article.created_at %></span>
-          </div>
-          <div class='article-info'>
-            <h1><%=article.name  %></h1>
+<div class='back'>
+  <% if @articles.present? %>
+    <div class='article-contents'>
+      <% @articles.each do |article| %>
+        <% if article.progress = 2 %>  
+          <div class='article-content'>
+            <%= link_to article_path(article.id),method: :get do %>
+              <div class='article-info'>
+                <div><%=article.user.nickname  %></div>が
+                <span><%= l article.created_at %></span>に投稿
+              </div>
+              <div class='article-content'>
+                <h3><%=article.name  %></h3>
+              </div>
+            <% end %>
           </div>
         <% end %>
-      </div>
-    <% end %>
-  </div>
-<% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
