@@ -1,24 +1,15 @@
 <%= render "shared/header"%>
 <div class="margin">
 </div>
-<div class='back'>
-  <% if @articles.present? %>
-    <div class='article-contents'>
-      <% @articles.each do |article| %>
-        <% if article.progress = 2 %>  
-          <div class='article-content'>
-            <%= link_to article_path(article.id),method: :get do %>
-              <div class='article-info'>
-                <div><%=article.user.nickname  %></div>が
-                <span><%= l article.created_at %></span>に投稿
-              </div>
-              <div class='article-content'>
-                <h3><%=article.name  %></h3>
-              </div>
-            <% end %>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  <% end %>
+<div class="back">
+  <div class="tabs">
+  <input id="article" type="radio" name="tab_item" cheked>
+  <label class="tab_item" for="article">新着記事</label>
+  <input id="tweet" type="radio" name="tab_item" cheked>
+  <label class="tab_item" for="tweet">ツイート</label>
+  <%= render partial:"shared/articles1", locals:{ articles: @articles } %>
+  <%= render partial:"shared/articles2", locals:{ articles: @articles } %>
+  </div>
 </div>
+
+<%= render "shared/footer"%>

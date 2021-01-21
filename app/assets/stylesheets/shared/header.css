@@ -96,4 +96,13 @@
   color: #333333;
 }
 
+.footer-icon-footer {
+  text-decoration: none;
+  justify-content: center;
+  width: 10vw;
+  font-size: xx-large;
+  font-family: 'Sacramento', cursive;
+  color: whitesmoke;
+  font-weight: 900;
+}
 
