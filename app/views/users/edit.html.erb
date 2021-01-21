@@ -1,7 +1,7 @@
 <%= render "shared/header"%>
 <div class="margin">
 </div>
-<%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
+<%= form_with model: @user, url: user_path,method: :patch, class: 'registration-main', local: true do |f| %>
 <div class='form-wrap'>
   <div class='form-header'>
     <h1 class='form-header-text'>
@@ -25,6 +25,11 @@
     <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可", autofocus: true %>
   </div>
   <div class="form-group">
+      <div class='form-text-wrap'>
+      <label class="form-text">現在のパスワード確認</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.password_field :current_password, class:"input-default", autocomplete: "current-password" %>
     <div class='form-text-wrap'>
       <label class="form-text">パスワード</label>
       <span class="indispensable">必須</span>
@@ -47,20 +52,12 @@
       </div>
       <div class="click-upload">
         <p>
-          クリックしてファイルをアップロード
+          クリック&アップロード
         </p>
         <%= f.file_field :user_image, id:"video-image" %>
       </div>
     </div>
   <%# /プロフィール画像 %>
-  <div class="form-group">
-    <p class='form-info-header'>
-      本人確認
-    </p>
-    <p class='form-info-text'>
-      安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
-    </p>
-  </div>
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">生年月日</label>

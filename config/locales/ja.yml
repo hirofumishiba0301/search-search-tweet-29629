@@ -2,10 +2,14 @@ ja:
   time:
     formats:
       default: "%Y/%m/%d %H:%M"
+  date:
+    order:
+      - :year
+      - :month
+      - :day
   enums:              #enum型に対する日本語定義であることを明示するために記述
     article:           #モデル名を指定
       progress:           #カラム名を指定
         waiting: 下書き     #Enumの名前定義①
         start: 記事投稿   #Enumの名前定義②
         tweet: ツイート      #Enumの名前定義③
-
