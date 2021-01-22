@@ -7,10 +7,10 @@
  <div class='nav'>
     <ul class='purchase-btn'>
         <% if user_signed_in? && current_user.id %>
-          <li><%#= link_to "+投稿", new_video_path, method: :get , class: "purchase-btn-text"%> </li> 
+          <li><%= link_to "+投稿", new_article_path, method: :get , class: "purchase-btn-text"%> </li> 
           <li><%= link_to '検索', articles_path, method: :get, class: "purchase-btn-text" %>
           <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete , class: "purchase-btn-text"%> </li> 
-          <li><%= link_to current_user.nickname,'#', class: "purchase-nickname-text" %></li> 
+          <li><%= link_to current_user.nickname, user_path(current_user), class: "purchase-nickname-text" %></li> 
         <% else %>
           <li><%= link_to 'ログイン', new_user_session_path,method: :get, class: "purchase-btn-text" %></li>
           <li><%= link_to '新規登録', new_user_registration_path,method: :get , class: "purchase-btn-text" %></li>

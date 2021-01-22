@@ -1,0 +1,25 @@
+<div class="tab_content" id="tweet_content">
+  <div class="tab_content_description">
+    <% if articles.present? %>
+      <div class='tweet_contents'>
+        <% articles.each do |article| %>
+          <% if article.user.id == user.id %>
+          <% if article.tweet? %>  
+            <div class='tweet_content'>
+              <%= link_to article_path(article.id),method: :get do %>
+                <div class='article-info'>
+                  <div><%=article.user.nickname  %></div>が
+                  <span><%= l article.created_at %></span>に投稿
+                </div>
+                <div class='article-content'>
+                  <h3><%=markdown(article.text).html_safe  %></h3>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

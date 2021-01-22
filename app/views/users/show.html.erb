@@ -1,0 +1,37 @@
+<%= render "shared/header"%>
+<div class="margin">
+</div>
+<div class="back">
+  <div class="user-contents">
+    <div class="user-image">
+      <% if @user.user_image.present? %>
+        <%=image_tag @user.user_image %>
+        <div class="user-info">
+          <span><%=@user.nickname%></span>
+        </div>
+      <% else %>
+        <span><%=@user.nickname%></span>
+      <% end %>
+    </div>
+    <div class="user-info">
+
+    </div>
+    <div class="user-info">
+      <% if @user.id == current_user.id %>
+        <%= link_to "プロフィール編集", edit_user_path, method: :get , class: "purchase-btn-text"%>
+      <% else %>
+        <%= link_to "フォローする", '#', method: :delete , class: "purchase-btn-text"%>
+      <% end %>
+    </div>
+  </div>
+  <div class="tabs">
+    <input id="article" type="radio" name="tab_item" cheked>
+    <label class="tab_item" for="article">新着記事</label>
+    <input id="tweet" type="radio" name="tab_item" cheked>
+    <label class="tab_item" for="tweet">ツイート</label>
+    <%= render partial:"shared/user_articles1", locals:{ articles: @articles, user: @user } %>
+    <%= render partial:"shared/user_articles2", locals:{ articles: @articles, user: @user } %>
+  </div>
+</div>
+
+<%= render "shared/footer"%>

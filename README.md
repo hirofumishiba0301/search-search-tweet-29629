@@ -3,16 +3,14 @@
 
 ## users テーブル
 
-| Column             | Type   | Options     |
-| ------------------ | ------ | ----------- |
-| email              | string | null: false |
-| encrypted_password | string | null: false |
-| birthday           | date   | null: false |
-| nickname           | string | null: false |
-| last-name          | string | null: false |
-| first-name         | string | null: false |
-| last-name-kana     | string | null: false |
-| first-name-kana    | string | null: false |
+| Column             | Type    | Options     |
+| ------------------ | ------- | ----------- |
+| email              | string  | null: false |
+| encrypted_password | string  | null: false |
+| birthday           | date    | null: false |
+| nickname           | string  | null: false |
+| follower_counts    | integer |             |
+
 
 ### Association
 - has_many :favorites
@@ -31,7 +29,7 @@
 | info            | text       | null: false                    |
 | favorite_counts | integer    |                                |
 | goodjob_counts  | integer    |                                |
-| type            | integer    |                                |
+| progress        | integer    | default: 0                     |
 
 ### Association
 - belongs_to :user

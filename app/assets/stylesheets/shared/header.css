@@ -19,7 +19,7 @@
   display: flex;
   justify-content: space-between;
   /*flex-direction: column;*/
-  position: fixed;
+  /*position: fixed;*/
   border-bottom: 1.5px solid rgb(109, 109, 109);
 }
 
@@ -96,4 +96,13 @@
   color: #333333;
 }
 
+.footer-icon-footer {
+  text-decoration: none;
+  justify-content: center;
+  width: 10vw;
+  font-size: xx-large;
+  font-family: 'Sacramento', cursive;
+  color: whitesmoke;
+  font-weight: 900;
+}
 
