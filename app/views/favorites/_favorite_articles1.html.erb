@@ -1,0 +1,21 @@
+<% if articles.present? %>
+  <div class='article-contents'>
+    <% articles.each do |article| %>
+    <% if  article.start? %>  
+        <% if Favorite.find_by(user_id: current_user.id, article_id: article.id) %>
+            <div class='article-content'>
+              <%= link_to article_path(article.id),method: :get do %>
+                <div class='article-info'>
+                  <div><%=article.user.nickname  %></div>が
+                  <span><%= l article.created_at %></span>に投稿
+                </div>
+                <div class='article-content'>
+                  <h3><%= article.name  %></h3>
+                </div>
+              <% end %>
+            </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

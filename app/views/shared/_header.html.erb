@@ -7,6 +7,7 @@
  <div class='nav'>
     <ul class='purchase-btn'>
         <% if user_signed_in? && current_user.id %>
+          <li><%= link_to "しおり", user_favorites_path(current_user), method: :get , class: "purchase-btn-text"%> </li> 
           <li><%= link_to "+投稿", new_article_path, method: :get , class: "purchase-btn-text"%> </li> 
           <li><%= link_to '検索', articles_path, method: :get, class: "purchase-btn-text" %>
           <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete , class: "purchase-btn-text"%> </li> 
