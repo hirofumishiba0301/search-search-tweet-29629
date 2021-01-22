@@ -1,0 +1,30 @@
+<% if user_signed_in? %>
+  <% if Goodjob.find_by(user_id: current_user.id, article_id: article.id) %>
+  <% goodjob = Goodjob.find_by(user_id: current_user.id, article_id: article.id) %>
+    <%= button_to unlike_path(article.id), method: :delete, class:"unlike-button", id: "goodjob-button", remote: true do %>
+      <span>
+        <%= article.goodjobs_counts %>
+      </span>
+      <span> Good</span>
+    <% end %>
+  <% else %>
+    <%= button_to like_path(article.id), class:"like-button", id: "goodjob-button", remote: true do %>
+      <span>
+        <%= article.goodjobs_counts %>
+      </span>
+      <span> good</span>
+    <% end %>
+  <% end %>
+<% else %>
+  <% if article.goodjobs_count? %>
+    <span>
+      <%= article.goodjobs_counts %>
+    </span>
+    <span> good </span>
+  <% else %>
+    <span>
+      <%= article.goodjobs_counts %>
+    </span>
+    <span>0 good</span>
+  <% end %>    
+<% end %>
