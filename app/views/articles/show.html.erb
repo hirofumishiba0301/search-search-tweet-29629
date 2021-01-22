@@ -12,7 +12,7 @@
               <%= render partial: "goodjobs/goodjob", locals:{article: @article} %>
             </div>
         </li> 
-        <li><%= link_to "栞",'#', class: "purchase-nickname-text" %></li> 
+        <li><%= render partial: "favorites/favorite", locals:{article: @article} %></li>
       <% else %>
         <li>
           <div class='article-goodjob-counts' >
@@ -20,7 +20,7 @@
           </div>
         
         </li> 
-        <li><%= link_to "栞",'#', class: "purchase-nickname-text" %></li> 
+        <li><%= render partial: "favorites/favorite", locals:{article: @article} %></li>
       <% end %>
     </ul>
   </div>

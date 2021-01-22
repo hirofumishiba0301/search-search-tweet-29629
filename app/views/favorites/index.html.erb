@@ -1,0 +1,13 @@
+<%= render "shared/header"%>
+<div class="margin">
+</div>
+<h2>しおり追加記事一覧</h2>
+<div class="back">
+  <% if @favorites.present? %>
+   <%= render partial:"favorite_articles1", locals:{ articles: @articles, favorites: @favorites } %>
+  <% else %>
+    <h2>しおりに追加している記事はありません</h2>
+  <% end %>
+</div>
+
+<%= render "shared/footer"%>

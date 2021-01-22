@@ -1,0 +1,12 @@
+<% if user_signed_in? %>
+  <% if Favorite.find_by(user_id: current_user.id, article_id: article.id) %>
+  <% favorite = Favorite.find_by(user_id: current_user.id, article_id: article.id) %>
+    <%= link_to unlove_path(article.id), method: :delete, id: "favorite-button", remote: true do %>
+      <div class='favorite-info'>しおり</div>
+    <% end %>
+  <% else %>
+    <%= link_to love_path(article.id), method: :post, id: "favorite-button", remote: true do %>
+      <div class='unfavorite-info'> ＋しおりに追加</div>
+    <% end %>
+  <% end %>
+<% end %>

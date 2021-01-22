@@ -1,5 +1,5 @@
 class FavoritesController < ApplicationController
-  before_action :set_article
+  before_action :set_article, only:[:create, :destroy]
 
   def index
     @articles = Article.includes(:user).order('created_at DESC')
