@@ -25,12 +25,12 @@
     </div>
   </div>
   <div class="tabs">
-  <input id="article" type="radio" name="tab_item" cheked>
-  <label class="tab_item" for="article">新着記事</label>
-  <input id="tweet" type="radio" name="tab_item" cheked>
-  <label class="tab_item" for="tweet">ツイート</label>
-  <%= render partial:"shared/user_articles1", locals:{ articles: @articles } %>
-  <%= render partial:"shared/user_articles2", locals:{ articles: @articles } %>
+    <input id="article" type="radio" name="tab_item" cheked>
+    <label class="tab_item" for="article">新着記事</label>
+    <input id="tweet" type="radio" name="tab_item" cheked>
+    <label class="tab_item" for="tweet">ツイート</label>
+    <%= render partial:"shared/user_articles1", locals:{ articles: @articles, user: @user } %>
+    <%= render partial:"shared/user_articles2", locals:{ articles: @articles, user: @user } %>
   </div>
 </div>
 

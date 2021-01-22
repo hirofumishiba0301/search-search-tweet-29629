@@ -19,7 +19,7 @@
   display: flex;
   justify-content: space-between;
   /*flex-direction: column;*/
-  position: fixed;
+  /*position: fixed;*/
   border-bottom: 1.5px solid rgb(109, 109, 109);
 }
 

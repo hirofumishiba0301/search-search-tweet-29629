@@ -1,25 +1,25 @@
-<div class="tab_content" id="draft_content">
+<div class="tab_content" id="article1_content">
   <div class="tab_content_description">
-  <% if @user.id == current_user.id %>
-    <% if @articles.present? %>
-      <div class='draft-contents'>
-        <% @articles.each do |article| %>
-          <% if article.wating? %>  
-            <div class='draft-content'>
-              <%= link_to article_path(article.id),method: :get do %>
-                <div class='draft-info'>
-                  <div><%=article.user.nickname  %></div>が
-                  <span><%= l article.created_at %></span>に投稿
-                </div>
-                <div class='draft-content'>
-                  <h3><%=article.name  %></h3>
-                </div>
-              <% end %>
-            </div>
+      <% if articles.present? %>
+        <div class='article-contents'>
+          <% articles.each do |article| %>
+          <% if article.user.id == user.id %>
+            <% if  article.wating? %>  
+              <div class='article-content'>
+                <%= link_to article_path(article.id),method: :get do %>
+                  <div class='article-info'>
+                    <div><%=article.user.nickname  %></div>が
+                    <span><%= l article.created_at %></span>に投稿
+                  </div>
+                  <div class='article-content'>
+                    <h3><%=article.name  %></h3>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
           <% end %>
-        <% end %>
-      </div>
-    <% end %>
-  <% end %>
+          <% end %>
+        </div>
+      <% end %>
   </div>
 </div>
