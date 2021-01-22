@@ -7,10 +7,19 @@
       <% if @article.user.id == current_user.id %>
         <li><%= link_to "編集", edit_article_path, method: :get , class: "purchase-btn-text"%> </li> 
         <li><%= link_to '削除', article_path, method: :delete, class: "purchase-btn-text" %>
-        <li><%= link_to "good", '#', method: :delete , class: "purchase-btn-text"%> </li> 
+        <li>                   
+            <div class='article-goodjob-counts' >
+              <%= render partial: "goodjobs/goodjob", locals:{article: @article} %>
+            </div>
+        </li> 
         <li><%= link_to "栞",'#', class: "purchase-nickname-text" %></li> 
       <% else %>
-        <li><%= link_to "good", '#', method: :delete , class: "purchase-btn-text"%> </li> 
+        <li>
+          <div class='article-goodjob-counts' >
+            <%= render partial: "goodjobs/goodjob", locals:{article: @article} %>
+          </div>
+        
+        </li> 
         <li><%= link_to "栞",'#', class: "purchase-nickname-text" %></li> 
       <% end %>
     </ul>
