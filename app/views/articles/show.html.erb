@@ -18,7 +18,6 @@
           <div class='article-goodjob-counts' >
             <%= render partial: "goodjobs/goodjob", locals:{article: @article} %>
           </div>
-        
         </li> 
         <li><%= render partial: "favorites/favorite", locals:{article: @article} %></li>
       <% end %>
@@ -26,17 +25,25 @@
   </div>
   <div class='article-contents'>
     <% if @article.present? %>
-          <div class='article-contents'>
+            <div class='article-info'>
+              <div><%=link_to  user_path(@article.user.id) do %>
+              <% if @article.user.user_image.attached? %>
+                <%=image_tag @article.user.user_image, class: "icon_small_image"%>
+              <% else %>
+                <span><%= @article.user.nickname %></span>
+              <% end %>
+              <% end %>
+              </div>
+              <span><%= l @article.created_at %></span>
+            </div>
+            <div class='article-contents'>
               <div class='article-name'>
                 <h1><%=@article.name  %></h1>
-              </div>
-                <div class='article-username'>
-                <h1><%=@article.user.nickname  %></h1>
               </div>
               <div class='article-text' >
                 <p><%= markdown(@article.text).html_safe %></p>
               </div>
-          </div>
+            </div>
     <% end %>
   </div>
   <div class='show-title'>
