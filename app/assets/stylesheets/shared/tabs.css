@@ -44,6 +44,7 @@ input[name="tab_item"] {
 
 /*選択されているタブのコンテンツのみを表示*/
 #article:checked ~ #article1_content,
+#draft:checked ~ #draft_content,
 #tweet:checked ~ #tweet_content {
   display: block;
 }
