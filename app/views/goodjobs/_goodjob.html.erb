@@ -1,14 +1,14 @@
 <% if user_signed_in? %>
   <% if Goodjob.find_by(user_id: current_user.id, article_id: article.id) %>
   <% goodjob = Goodjob.find_by(user_id: current_user.id, article_id: article.id) %>
-    <%= button_to unlike_path(article.id), method: :delete, class:"unlike-button", id: "goodjob-button", remote: true do %>
+    <%= button_to unlike_path(article.id), method: :delete, class:"register-red-btn", id: "goodjob-button", remote: true do %>
       <span>
         <%= article.goodjobs_counts %>
       </span>
       <span> Good</span>
     <% end %>
   <% else %>
-    <%= button_to like_path(article.id), class:"like-button", id: "goodjob-button", remote: true do %>
+    <%= button_to like_path(article.id), class:"register-white-btn", id: "goodjob-button", remote: true do %>
       <span>
         <%= article.goodjobs_counts %>
       </span>

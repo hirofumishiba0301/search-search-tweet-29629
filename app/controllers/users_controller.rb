@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
   def show
     @articles = Article.includes(:user).order('created_at DESC')
+    @articles_count = Article.joins(:user).group("users.nickname").order('count_all DESC').count 
   end
 
   def edit
@@ -16,6 +17,16 @@ class UsersController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def follow
+    @user = User.find(params[:id])
+    @users = @user.follows
+  end
+
+  def followers
+    @user = User.find(params[:id])
+    @users = @user.followers
   end
 
   private

@@ -1,3 +1,24 @@
 p {
   white-space: pre-wrap;
 }
+
+.icon_image{
+  width: 20vw;
+  height: 30vh;
+  border-radius: 100%; /* 画像を丸くする */
+  object-fit: cover; /* 縦横の比率を変えないでトリミング */
+}
+
+.icon_small_image{
+  width: 3vw;
+  height: 5.5vh;
+  border-radius: 100%; /* 画像を丸くする */
+  object-fit: cover; /* 縦横の比率を変えないでトリミング */
+}
+
+.user-name{
+  text-align: center;
+  font-size: x-large;
+  font-weight: 700;
+  padding-bottom: 1vh;
+}
