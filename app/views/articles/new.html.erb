@@ -6,11 +6,13 @@
 </div>
 <%= form_with model: @article, url: articles_path, method: :post, local: true do |f| %>
   <%=render 'shared/error_messages', model: f.object %>
+              
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">主題</label>
       <span class="indispensable">必須</span>
     </div>
+    <%= f.text_field :tag_list, value: @article.tag_list.join(','), class:"form-text", id:"article-info", placeholder:"タグ（,を追記して複数作成可能）" %>
     <%= f.text_area :name, class:"input-default", id:"article-name", placeholder:"主題を記入", maxlength:"40" %>
   </div>
 
