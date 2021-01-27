@@ -6,6 +6,10 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.includes(:user).order('created_at DESC')
     set_article_column
+    @tags = Article.tag_counts_on(:tags).order('count DESC')
+    if @tag = params[:tag]   # タグ検索用
+      @article = Article.tagged_with(params[:tag])   # タグに紐付く投稿
+    end
   end
 
   def new
@@ -22,6 +26,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @tags = @article.tag_counts_on(:tags)
   end
 
   def destroy
@@ -70,7 +75,7 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:name, :text, :progress).merge(user_id: current_user.id)
+    params.require(:article).permit(:name, :text, :progress, :tag_list).merge(user_id: current_user.id)
   end
 
 end
