@@ -1,0 +1,35 @@
+<%= render "shared/header" %>
+<h1 class='title'>
+  検索結果
+</h1>
+<%# 検索結果の個数で条件分岐 %>
+<% if @results.length !=0 %>
+          <div class='article-contents'>
+          <% @results.each do |article| %>
+              <div class='article-content'>
+                  <div class='article-info'>
+                    <div><%=link_to  user_path(article.user.id) do %>
+                    <% if article.user.user_image.attached? %>
+                      <%=image_tag article.user.user_image, class: "icon_small_image"%>
+                    <% else %>
+                      <span><%= article.user.nickname %></span>
+                    <% end %>
+                    <% end %>
+                    </div>が
+                    <span><%= l article.created_at %></span>に投稿
+                  </div>
+                  <div class='article-content'>
+                    <%= link_to article_path(article.id),method: :get do %>
+                    <h3><%=article.name  %></h3>
+                    <% end %>
+                  </div>
+              </div>
+            
+          <% end %>
+        </div>
+<% else %>
+  該当する記事はありません
+<% end %>
+
+
+<%= render "shared/footer" %>

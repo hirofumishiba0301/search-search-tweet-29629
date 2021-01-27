@@ -1,9 +1,11 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :search_article, only: [:index, :search]
 
   def index
     @articles = Article.includes(:user).order('created_at DESC')
+    set_article_column
   end
 
   def new
@@ -48,7 +50,20 @@ class ArticlesController < ApplicationController
     render json: { filename: url_for(attachment.image) }
   end
 
+  def search
+    @results = @q.result.includes(:user)  # 検索条件にマッチした記事の情報を取得
+  end
+
   private
+
+  def search_article
+    @q = Article.ransack(params[:q])
+  end
+
+  def set_article_column
+    @article_name = Article.select("name").distinct  # 重複なくnameカラムのデータを取り出す
+  end
+
 
   def set_article
     @article = Article.find(params[:id])

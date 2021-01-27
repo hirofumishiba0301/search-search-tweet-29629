@@ -35,6 +35,9 @@
 
 .margin{
   height: 10vh;
+  text-align: center;
+  margin-top: 3vh;
+  font-size: large;
 }
 
 .nav {
@@ -58,7 +61,6 @@
   font-size: medium;
   margin-right: 1vw;
   padding-inline: 1vw;
-  text-decoration: none;
   background-color: darkred;
   border: 1.5px solid #ffffff;
   text-decoration: none;

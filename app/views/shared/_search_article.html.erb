@@ -1,0 +1,5 @@
+<%= search_form_for @q, url: articles_search_path do |f| %>
+<label >記事名</label>
+<%= f.search_field :name_cont , class: "inpt-defalt"%>
+<%= f.submit '検索' %>
+<% end %>
