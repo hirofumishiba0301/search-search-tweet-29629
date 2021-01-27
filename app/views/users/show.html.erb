@@ -7,7 +7,33 @@
       <% if @user.user_image.present? %>
         <%=image_tag @user.user_image, class: "icon_image"%>
         <div class="user-info">
-          <span><%=@user.nickname%></span>
+          <div class="user-name"><%=@user.nickname%></div>
+          <style>
+            table, th, td {
+              border-collapse: collapse;
+              border: 1px solid #ddd;
+              background-color: #fff
+            }
+
+            td {
+              text-align: center;
+              padding: 2vh;
+            }
+          </style>
+          <table>
+          <% @articles_count.each_with_index do |article, i| %>
+          <% if article.first == @user.nickname %>
+          <tr>
+            <td> <%= article.second %> </td>
+            <td> <%= Article.where(user_id: @user.id).sum(:goodjobs_counts) %> </td>
+          </tr>
+          <% end %>
+          <% end %>
+          <tr>
+            <td> 投稿数 </td>
+            <td> グッジョブ数 </td>
+          </tr>
+          </table>
         </div>
       <% else %>
         <span><%=@user.nickname%></span>
@@ -20,7 +46,7 @@
     </div>
     <div class="user-info">
       <% if @user.id == current_user.id %>
-        <%= link_to "プロフィール編集", edit_user_path, method: :get , class: "purchase-btn-text"%>
+        <%= button_to "プロフィール編集", edit_user_path, method: :get , class: "register-red-btn"%>
       <% else %>
         <%= render 'relationships/follow' %>
       <% end %>

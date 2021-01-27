@@ -1,6 +1,7 @@
 class Article < ApplicationRecord
   belongs_to :user
   has_many :goodjobs, dependent: :destroy
+  has_many :favorites, dependent: :destroy
   
   validates :name, presence: true
   validates :text, presence: true
