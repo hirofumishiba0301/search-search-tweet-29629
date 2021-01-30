@@ -50,6 +50,7 @@
       <div></div>
       <div></div>
     </div>
+    <% if user_signed_in? %>
     <div class="user-info">
       <% if @user.id == current_user.id %>
         <%= button_to "プロフィール編集", edit_user_path, method: :get , class: "register-red-btn"%>
@@ -57,6 +58,7 @@
         <%= render 'relationships/follow' %>
       <% end %>
     </div>
+    <% end %>
   </div>
   <div class="tabs">
     <input id="article" type="radio" name="tab_item" cheked>
