@@ -68,3 +68,4 @@ gem 'redcarpet', '~> 2.3.0'
 gem 'coderay'
 gem 'ransack'
 gem 'acts-as-taggable-on'
+gem "aws-sdk-s3", require: false

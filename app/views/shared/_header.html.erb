@@ -7,15 +7,15 @@
  <div class='nav'>
     <ul class='purchase-btn'>
         <% if user_signed_in? && current_user.id %>
-          <li><%= button_to "しおり", user_favorites_path(current_user), method: :get , class: "register-red-btn"%> </li> 
-          <li><%= button_to "+投稿", new_article_path, method: :get , class: "register-red-btn"%> </li> 
-          <li><%= button_to '検索', articles_path, method: :get, class: "register-red-btn" %>
-          <li><%= button_to "ログアウト", destroy_user_session_path, method: :delete , class: "register-red-btn"%> </li> 
-          <li><%= button_to current_user.nickname, user_path(current_user), class: "register-red-btn" %></li> 
+          <li><%= button_to "しおり", user_favorites_path(current_user), method: :get , class: "register-red-btn2"%> </li> 
+          <li><%= button_to "+投稿", new_article_path, method: :get , class: "register-red-btn2"%> </li> 
+          <li><%= button_to '検索', articles_path, method: :get, class: "register-red-btn2" %>
+          <li><%= button_to "ログアウト", destroy_user_session_path, method: :delete , class: "register-red-btn2"%> </li> 
+          <li><%= button_to current_user.nickname, user_path(current_user), method: :get, class: "register-red-btn2" %></li> 
         <% else %>
-          <li><%= button_to 'ログイン', new_user_session_path,method: :get, class: "register-red-btn" %></li>
-          <li><%= button_to '新規登録', new_user_registration_path,method: :get , class: "register-red-btn" %></li>
-          <li><%= button_to '検索', articles_path, method: :get, class: "register-red-btn" %>
+          <li><%= button_to 'ログイン', new_user_session_path,method: :get, class: "register-red-btn2" %></li>
+          <li><%= button_to '新規登録', new_user_registration_path,method: :get , class: "register-red-btn2" %></li>
+          <li><%= button_to '検索', articles_path, method: :get, class: "register-red-btn2" %>
           </li> 
         <% end %>
     </ul>
