@@ -20,12 +20,13 @@
                     <%= link_to article_path(article.id),method: :get do %>
                     <h3><%=article.name  %></h3>
                     <% end %>
-                  </div>
-            <% if article.tags.present? %>
-              <div class='tags-table'>
-                タグ <%= render partial: "shared/tags", locals:{tags: @tags, video: @video} %>
-              </div>
-            <% end %>
+                  <span><%=article.goodjobs_counts %>good</span>
+                  <% if article.tags.present? %>
+                    <div class='tags-table'>
+                      タグ <%= render partial: "shared/tags", locals:{tags: @tags} %>
+                    </div>
+                  <% end %>
+               </div>
               </div>
             <% end %>
           <% end %>

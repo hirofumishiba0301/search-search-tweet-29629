@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :follower_relationships, foreign_key: "follow_id", class_name: "Relationship", dependent: :destroy
   has_many :followers, through: :follower_relationships
 
+
   def follow?(other_user)
     follow_relationships.find_by(follow_id: other_user.id)
   end

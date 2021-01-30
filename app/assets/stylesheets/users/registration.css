@@ -143,29 +143,7 @@
   margin: 0 auto;
 }
 
-.register-red-btn {
-  width: 100%;
-  background: darkred;
-  border: 1px solid darkred;
-  color: #fff;
-  font-weight: bold;
-  line-height: 48px;
-  font-size: medium;
-  margin-bottom: 1vh;
-  cursor: pointer;
-}
 
-.register-white-btn {
-  width: 100%;
-  background: #fff;
-  border: 1vh solid darkred;
-  color: darkred;
-  font-weight: bold;
-  line-height: 48px;
-  font-size: medium;
-  margin-bottom: 1vh;
-  cursor: pointer;
-}
 
 .register-info {
   margin: 30px 180px 0 0;

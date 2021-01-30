@@ -11,11 +11,17 @@ p {
 
 .icon_small_image{
   width: 3vw;
-  height: 5.5vh;
-  border-radius: 100%; /* 画像を丸くする */
+  height: 3vh;
+  border-radius: 50%; /* 画像を丸くする */
   object-fit: cover; /* 縦横の比率を変えないでトリミング */
 }
 
+.icon_middle_image{
+  width: auto;
+  height: auto;
+  border-radius: 50%; /* 画像を丸くする */
+  object-fit: cover; /* 縦横の比率を変えないでトリミング */
+}
 .user-name{
   text-align: center;
   font-size: x-large;
