@@ -40,12 +40,11 @@
   <label class="tab_item" for="article">新着記事</label>
   <input id="tweet" type="radio" name="tab_item" cheked>
   <label class="tab_item" for="tweet">ツイート</label>
-
+  <input id="draft" type="radio" name="tab_item" cheked>
+  <label class="tab_item" for="draft">下書き</label>
   <%= render partial:"shared/articles1", locals:{ articles: @articles } %>
   <%= render partial:"shared/articles2", locals:{ articles: @articles } %>
 <% if user_signed_in? %>
-  <input id="draft" type="radio" name="tab_item" cheked>
-  <label class="tab_item" for="draft">下書き</label>
   <%= render partial:"shared/articles0", locals:{ articles: @articles } %>
 <% end %>
   </div>
