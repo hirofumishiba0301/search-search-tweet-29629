@@ -4,9 +4,14 @@
   justify-content: center;
 }
 
+.search-field{
+  width: 50%;
+  height: 5vh;
+}
+
 .article-contents{
   background-color: #ffff;
-  width: 70%;
+  width: 60%;
 }
 
 .article-content{
@@ -36,8 +41,8 @@
 .show-btn{
   background-color: #f5f5f5;
   list-style: none;
-  position: sticky;
-  position: fixed;
+  /*position: sticky;
+  position: fixed;*/
   
 }
 
@@ -47,4 +52,102 @@
   background-color: #f5f5f5;
   display: flex;
   flex-direction: column;
+}
+
+.register-red-btn {
+  width: 90%;
+  background: darkred;
+  border: 1px solid #fff;
+  color: #fff;
+  font-weight: bold;
+  line-height: 4vh;
+  font-size: medium;
+  margin:1vh;
+  cursor: pointer;
+}
+
+.register-white-btn {
+  width: 100%;
+  background: #fff;
+  border: 1vh solid darkred;
+  color: darkred;
+  font-weight: bold;
+  line-height: 4vh;
+  font-size: medium;
+  margin: 1vh;
+  cursor: pointer;
+}
+.user-contents{
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+
+  .back{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .btn-tops{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .article-contents{
+    background-color: #ffff;
+    width: 100%;
+  }
+  
+  .article-content{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid gray;
+  }
+  
+  .article-info{
+    display: flex;
+    text-decoration: none;
+    
+  }
+  
+  .article-name{
+    border-bottom: 1px solid #565656;
+  }
+  
+  .show-btns{
+    width: 100%;
+    border-bottom: 1px solid #565656;
+    background-color: #fff;
+  }
+  
+  .show-btn{
+    width: 100%;
+    background-color: #fff;
+    list-style: none;
+    display: flex;
+  }
+
+  .register-red-btn {
+    width: 100%;
+    background: darkred;
+    border: 1px solid #fff;
+    color: #fff;
+    font-weight: bold;
+    line-height: 3vh;
+    font-size: small;
+    cursor: pointer;
+    margin: 1vh;
+  }
+  .register-white-btn {
+    width: 100%;
+    background: #fff;
+    border: 1px solid darkred;
+    color: darkred;
+    font-weight: bold;
+    line-height: 3vh;
+    font-size: small;
+    cursor: pointer;
+    margin: 1vh;
+  }
 }

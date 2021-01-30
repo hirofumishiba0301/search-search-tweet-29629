@@ -1,0 +1,17 @@
+    <ul class='show-btn'>
+      <% if @article.user.id == current_user.id %>
+        <li><%= button_to "編集", edit_article_path, method: :get , class: "register-red-btn"%> </li> 
+        <li><%= button_to '削除', article_path, method: :delete, class: "register-red-btn" %>
+        <li>                   
+              <%= render partial: "goodjobs/goodjob", locals:{article: @article} %>
+        </li> 
+        <li><%= render partial: "favorites/favorite", locals:{article: @article} %></li>
+      <% else %>
+        <li>
+          <div class='article-goodjob-counts' >
+            <%= render partial: "goodjobs/goodjob", locals:{article: @article} %>
+          </div>
+        </li> 
+        <li><%= render partial: "favorites/favorite", locals:{article: @article} %></li>
+      <% end %>
+    </ul>

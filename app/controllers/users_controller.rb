@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   def show
     @articles = Article.includes(:user).order('created_at DESC')
     @articles_count = Article.joins(:user).group("users.nickname").order('count_all DESC').count 
+    @tags = Article.tag_counts_on(:tags).order('count DESC')
   end
 
   def edit

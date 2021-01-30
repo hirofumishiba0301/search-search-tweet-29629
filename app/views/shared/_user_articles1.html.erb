@@ -6,15 +6,28 @@
           <% if article.user.id == user.id %>
             <% if  article.start? %>  
               <div class='article-content'>
-                <%= link_to article_path(article.id),method: :get do %>
                   <div class='article-info'>
-                    <div><%=article.user.nickname  %></div>が
+                    <div><%=link_to  user_path(article.user.id) do %>
+                    <% if article.user.user_image.attached? %>
+                      <%=image_tag article.user.user_image, class: "icon_small_image"%>
+                    <% else %>
+                      <span><%= article.user.nickname %></span>
+                    <% end %>
+                    <% end %>
+                    </div>が
                     <span><%= l article.created_at %></span>に投稿
                   </div>
                   <div class='article-content'>
+                    <%= link_to article_path(article.id),method: :get do %>
                     <h3><%=article.name  %></h3>
-                  </div>
-                <% end %>
+                    <% end %>
+                  <span><%=article.goodjobs_counts %>good</span>
+                  <% if article.tags.present? %>
+                    <div class='tags-table'>
+                      タグ <%= render partial: "shared/tags", locals:{tags: @tags} %>
+                    </div>
+                  <% end %>
+               </div>
               </div>
             <% end %>
           <% end %>

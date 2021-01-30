@@ -22,7 +22,11 @@
                   <div class='article-content'>
                     <%= link_to article_path(article.id),method: :get do %>
                     <h3><%=article.name  %></h3>
-                    タグ <%= render partial: "shared/tags", locals:{tags: @tags, article: article} %>
+                      <% if article.tags.present? %>
+                        <div class='tags-table'>
+                          タグ <%= render partial: "shared/tags", locals:{tags: @tags, video: @video} %>
+                        </div>
+                      <% end %>
                     <% end %>
                   </div>
               </div>

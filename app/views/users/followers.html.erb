@@ -1,0 +1,42 @@
+<%= render "shared/header"%>
+<h2 class='title'>
+  フォロワー 一覧
+</h2>
+<style>
+  table, th, td {
+    border-collapse: collapse;
+    border: 1px solid #ddd; 
+    background-color: #fff
+  }
+
+  td {
+    text-align: center;
+    padding: 3vh;
+    text-decoration: none;
+    width: 37vw;
+    font-size: x-large;
+  }
+</style>
+<% if @users.present? %>
+<table>
+<tr>
+<% @users.each do |user| %>
+    <% if user.user_image.attached? %>
+      <td>
+      <%=link_to  user_path(user.id) do %>
+      <%=image_tag user.user_image, class: "icon_middle_image"%></td>
+      <td><%= user.nickname %></td>
+      <% end %>
+    <% else %>
+    <td>イメージなし</td>
+    <%=link_to  user_path(user.id) do %>
+      <td><%= user.nickname %></td>
+      <% end %>
+    <% end %>
+<% end %>
+</tr>
+</table>
+<% else %>
+  <h3 class='title'>現在フォロワーはいません</h3>
+<% end %>
+<%= render "shared/footer"%>

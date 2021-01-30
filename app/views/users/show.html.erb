@@ -11,13 +11,15 @@
           <style>
             table, th, td {
               border-collapse: collapse;
-              border: 1px solid #ddd;
+              border: 1px solid #ddd; 
               background-color: #fff
+
             }
 
             td {
               text-align: center;
-              padding: 2vh;
+              padding: 3vh;
+              text-decoration: none;
             }
           </style>
           <table>
@@ -26,12 +28,16 @@
           <tr>
             <td> <%= article.second %> </td>
             <td> <%= Article.where(user_id: @user.id).sum(:goodjobs_counts) %> </td>
+            <td> <%= link_to followers_user_path(@user.id),method: :get do %>
+            <%= @user.followers.count %>
+            <% end %></td>
           </tr>
           <% end %>
           <% end %>
           <tr>
             <td> 投稿数 </td>
             <td> グッジョブ数 </td>
+            <td> フォロワー数 </td>
           </tr>
           </table>
         </div>

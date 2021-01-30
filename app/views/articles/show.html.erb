@@ -5,12 +5,10 @@
   <div class='show-btns'>
     <ul class='show-btn'>
       <% if @article.user.id == current_user.id %>
-        <li><%= link_to "編集", edit_article_path, method: :get , class: "purchase-btn-text"%> </li> 
-        <li><%= link_to '削除', article_path, method: :delete, class: "purchase-btn-text" %>
+        <li><%= button_to "編集", edit_article_path, method: :get , class: "register-red-btn"%> </li> 
+        <li><%= button_to '削除', article_path, method: :delete, class: "register-red-btn" %>
         <li>                   
-            <div class='article-goodjob-counts' >
               <%= render partial: "goodjobs/goodjob", locals:{article: @article} %>
-            </div>
         </li> 
         <li><%= render partial: "favorites/favorite", locals:{article: @article} %></li>
       <% else %>
@@ -34,7 +32,7 @@
               <% end %>
               <% end %>
               </div>
-              <span><%= l @article.created_at %></span>
+              が<span><%= l @article.created_at %></span>に投稿
             </div>
             <div class='article-contents'>
               <div class='article-name'>
