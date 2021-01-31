@@ -69,3 +69,5 @@ gem 'coderay'
 gem 'ransack'
 gem 'acts-as-taggable-on'
 gem "aws-sdk-s3", require: false
+gem 'bootstrap', '~> 4.3.1'
+gem 'jquery-rails'
