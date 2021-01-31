@@ -1,25 +1,25 @@
 <%# /下部広告部分 %>
 
-<div class='footer'>
-  <div class='footer-contents'>
-    <div class='footer-details'>
-      <h2 class='footer-content-head'>SearchTweetについて</h2>
+<div class='d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 alpha border-top shadow-sm'>
+  <div class='d-flex flex-column align-items-center'>
+    <div class='footer-details alpha'>
+      <h4 class='footer-content-head'>SearchTweetについて</h4>
       <ul>
-        <li><%= link_to '会社概要（運営会社)', "#", class: "footer-link" %></li>
-        <li><%= link_to 'プライバシーポリシー', "#", class: "footer-link" %></li>
-        <li><%= link_to 'Goodeo利用規約', "#", class: "footer-link" %></li>
-        <li><%= link_to 'ポイントに関する特約', "#", class: "footer-link" %></li>
+        <li><%= link_to '会社概要（運営会社)', "#", class: "footer-link alpha" %></li>
+        <li><%= link_to 'プライバシーポリシー', "#", class: "footer-link alpha" %></li>
+        <li><%= link_to 'Goodeo利用規約', "#", class: "footer-link alpha" %></li>
+        <li><%= link_to 'ポイントに関する特約', "#", class: "footer-link alpha" %></li>
       </ul>
     </div>
     <div class='furima-details'>
-      <h2 class='footer-content-head'>SearchTweetについて</h2>
+      <h4 class='footer-content-head'>SearchTweetについて</h4>
       <ul>
-        <li><%= link_to 'SearchTweetガイド', "#", class: "footer-link" %></li>
-        <li><%= link_to 'SearchTweetロゴ利用ガイドライン', "#", class: "footer-link" %></li>
-        <li><%= link_to 'お知らせ', "#", class: "footer-link" %></li>
+        <li><%= link_to 'SearchTweetガイド', "#", class: "footer-link alpha" %></li>
+        <li><%= link_to 'SearchTweetロゴ利用ガイドライン', "#", class: "footer-link alpha" %></li>
+        <li><%= link_to 'お知らせ', "#", class: "footer-link alpha" %></li>
       </ul>
     </div>
+  <%= link_to 'SearchTweet', articles_path,method: :get, class:"footer-icon-footer alpha" %>
   </div>
-  <%= link_to 'SearchTweet', articles_path,method: :get, class:"footer-icon-footer" %>
-  <p>© SearchTweet</p>
+  
 </div>

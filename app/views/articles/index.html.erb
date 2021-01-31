@@ -11,7 +11,7 @@
                   <div class='article-info'>
                     <div><%=link_to  user_path(article.user.id) do %>
                     <% if article.user.user_image.attached? %>
-                      <%=image_tag article.user.user_image, class: "icon_small_image"%>
+                      <%=image_tag article.user.user_image, class: "rounded mx-auto d-block"%>
                     <% else %>
                       <span><%= article.user.nickname %></span>
                     <% end %>
@@ -24,7 +24,11 @@
                     <h3><%=article.name  %></h3>
                       <% if article.tags.present? %>
                         <div class='tags-table'>
-                          タグ <%= render partial: "shared/tags", locals:{tags: @tags, video: @video} %>
+                          <% @tags.each do |tag| %>
+                            <%if article.tag_list.include?(tag.name) %>
+                              <%= link_to "#{tag.name}(#{tag.taggings_count})", articles_path(tag: tag.name), class: "btn beta" %>
+                            <% end %>
+                          <% end %>
                         </div>
                       <% end %>
                     <% end %>
@@ -34,14 +38,14 @@
           <% end %>
         </div>
 <% else %>
-<div class="back">
-  <div class="tabs">
-  <input id="article" type="radio" name="tab_item" cheked>
-  <label class="tab_item" for="article">新着記事</label>
+<div class="container">
+  <div class="row align-items">
+  <input  id="article" type="radio" name="tab_item" cheked>
+  <label class="col" for="article">新着記事</label>
   <input id="tweet" type="radio" name="tab_item" cheked>
-  <label class="tab_item" for="tweet">ツイート</label>
+  <label class="col" for="tweet">ツイート</label>
   <input id="draft" type="radio" name="tab_item" cheked>
-  <label class="tab_item" for="draft">下書き</label>
+  <label class="col" for="draft">下書き</label>
   <%= render partial:"shared/articles1", locals:{ articles: @articles } %>
   <%= render partial:"shared/articles2", locals:{ articles: @articles } %>
 <% if user_signed_in? %>
