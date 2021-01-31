@@ -24,7 +24,11 @@
                     <h3><%=article.name  %></h3>
                       <% if article.tags.present? %>
                         <div class='tags-table'>
-                          タグ <%= render partial: "shared/tags", locals:{tags: @tags, video: @video} %>
+                          <% @tags.each do |tag| %>
+                            <%if article.tag_list.include?(tag.name) %>
+                              <%= link_to "#{tag.name}(#{tag.taggings_count})", articles_path(tag: tag.name) %>
+                            <% end %>
+                          <% end %>
                         </div>
                       <% end %>
                     <% end %>

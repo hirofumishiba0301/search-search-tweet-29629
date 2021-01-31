@@ -1,5 +1,3 @@
-      <% if tags.present? %>
-        <% tags.each do |tag| %>
-            <%= link_to "#{tag.name}(#{tag.taggings_count})", articles_path(tag: tag.name) %>
-        <% end %>
-      <% end %>
+<% tags.each do |tag| %>
+  <%= link_to "#{tag.name}(#{tag.taggings_count})", articles_path(tag: tag.name) %>
+<% end %>
