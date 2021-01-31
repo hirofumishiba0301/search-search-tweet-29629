@@ -1,7 +1,7 @@
 <%= render "shared/header"%>
 <div class="margin">
 </div>
-<div class="back">
+<div class="d-flex flex-column flex-md-row  ">
   <div class="user-contents">
     <div class="user-image">
       <% if @user.user_image.present? %>
@@ -22,7 +22,7 @@
               text-decoration: none;
             }
           </style>
-          <table>
+          <table class="table ">
           <% @articles_count.each_with_index do |article, i| %>
           <% if article.first == @user.nickname %>
           <tr>

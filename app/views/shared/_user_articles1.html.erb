@@ -26,7 +26,7 @@
                     <div class='tags-table'>
                     <% @tags.each do |tag| %>
                        <%if article.tag_list.include?(tag.name) %>
-                         <%= link_to "#{tag.name}(#{tag.taggings_count})", articles_path(tag: tag.name) %>
+                         <%= link_to "#{tag.name}(#{tag.taggings_count})", articles_path(tag: tag.name), class: "btn beta" %>
                       <% end %>
                     <% end %>
                     </div>
