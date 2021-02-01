@@ -5,9 +5,9 @@
   <div class="user-contents">
     <div class="user-image">
       <% if @user.user_image.present? %>
-        <%=image_tag @user.user_image, class: "icon_image"%>
+        <%=image_tag @user.user_image, class: "rounded-circle", width:"270", height:"270"%>
         <div class="user-info">
-          <div class="h4 align-items-ceter "><%=@user.nickname%></div>
+          <div class="h2 align-items-ceter "><%=@user.nickname%></div>
           <style>
             table, th, td {
               border-collapse: collapse;
