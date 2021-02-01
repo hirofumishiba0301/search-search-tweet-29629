@@ -5,9 +5,11 @@
   </div>
   <%# ヘッダー操作ボタン %>
   <div class='d-flex flex-md-row align-items-center '>
-  <%= search_form_for @q, url: articles_search_path do |f| %>
-  <%= f.search_field :name_cont , class: "search-field"%>
-  <%= f.submit '検索' %>
+    <% if user_signed_in? %>
+    <%= search_form_for @q, url: articles_search_path do |f| %>
+    <%= f.search_field :name_cont , class: "search-field"%>
+    <%= f.submit '検索' %>
+    <% end %>
   <% end %>
   <div class='d-flex px-md-1'>
       <ul class='d-flex row '>
