@@ -1,6 +1,5 @@
-<%= render "shared/header"%>
+<%= render "shared/header",locals:{ articles: @articles } %>
 <div class="margin">
-    <%= render partial: "shared/search_article", locals:{article: @articles} %>
 </div>
 <% if @article.present? %>
 <h2 class='title'><%= "タグ:#{@tag} 検索結果" %></h2>
@@ -38,19 +37,58 @@
           <% end %>
         </div>
 <% else %>
+
+<div class="accordion d-flex" id="accordion-4">
+  <div class="card">
+    <div class="card-header" id="header-4a">
+      <button class="btn btn-link beta" type="button" data-toggle="collapse" data-target="#card-4a" aria-expanded="true" aria-controls="card-4a">
+       新着記事
+      </button>
+    </div>
+    <div id="card-4a" class="collapse" aria-labelledby="header-4a" data-parent="#accordion-4">
+      <div class="card-body">
+        <%= render partial:"shared/articles1", locals:{ articles: @articles } %>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="header-4b">
+      <button class="btn btn-link beta" type="button" data-toggle="collapse" data-target="#card-4b" aria-expanded="true" aria-controls="card-4b">
+       ツイート
+      </button>
+    </div>
+    <div id="card-4b" class="collapse" aria-labelledby="header-4b" data-parent="#accordion-4">
+      <div class="card-body">
+        <%= render partial:"shared/articles2", locals:{ articles: @articles } %>
+      </div>
+    </div>
+  </div>
+  <% if user_signed_in? %>
+    <div class="card">
+    <div class="card-header" id="header-4c">
+      <button class="btn btn-link beta" type="button" data-toggle="collapse" data-target="#card-4c" aria-expanded="true" aria-controls="card-4c">
+       下書き
+      </button>
+    </div>
+    <div id="card-4c" class="collapse" aria-labelledby="header-4c" data-parent="#accordion-4">
+      <div class="card-body">
+        <%= render partial:"shared/articles0", locals:{ articles: @articles } %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+
 <div class="container">
-  <div class="row align-items">
-  <input  id="article" type="radio" name="tab_item" cheked>
-  <label class="col" for="article">新着記事</label>
-  <input id="tweet" type="radio" name="tab_item" cheked>
-  <label class="col" for="tweet">ツイート</label>
-  <input id="draft" type="radio" name="tab_item" cheked>
-  <label class="col" for="draft">下書き</label>
-  <%= render partial:"shared/articles1", locals:{ articles: @articles } %>
-  <%= render partial:"shared/articles2", locals:{ articles: @articles } %>
-<% if user_signed_in? %>
-  <%= render partial:"shared/articles0", locals:{ articles: @articles } %>
-<% end %>
+  <button class="btn beta collapsed" type="button" data-toggle="collapse" data-target="#example-1" aria-controls="example-1" aria-expand="false">
+        <span>新着記事</span>
+  </button>
+  <div class="collapse" id="example-1" style="">
+    <div class="container">
+      <div class="row">
+        <%= render partial:"shared/articles1", locals:{ articles: @articles } %>
+      </div>
+    </div>
   </div>
 </div>
 

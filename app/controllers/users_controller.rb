@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_user, only: [:show, :edit, :update]
+  before_action :search_article
 
   def show
     @articles = Article.includes(:user).order('created_at DESC')
@@ -30,7 +31,15 @@ class UsersController < ApplicationController
     @users = @user.followers
   end
 
+  def search
+    @results = @q.result.includes(:user)  # 検索条件にマッチした記事の情報を取得
+  end
+
   private
+
+  def search_article
+    @q = Article.ransack(params[:q])
+  end
 
   def set_user
     @user = User.find(params[:id])

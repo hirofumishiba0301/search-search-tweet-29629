@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
   <% if Goodjob.find_by(user_id: current_user.id, article_id: article.id) %>
   <% goodjob = Goodjob.find_by(user_id: current_user.id, article_id: article.id) %>
-    <%= button_to unlike_path(article.id), method: :delete, class:"p-10 btn beta", id: "goodjob-button", remote: true do %>
+    <%= button_to unlike_path(article.id), method: :delete, class:"mb-10 btn beta", id: "goodjob-button", remote: true do %>
       <span>
         <%= article.goodjobs_counts %>
       </span>

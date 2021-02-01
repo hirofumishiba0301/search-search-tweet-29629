@@ -12,15 +12,15 @@
       <label class="form-text">主題</label>
       <span class="indispensable">必須</span>
     </div>
-    <%= f.text_field :tag_list, value: @article.tag_list.join(','), class:"form-text", id:"article-info", placeholder:"タグ（,を追記して複数作成可能）" %>
-    <%= f.text_area :name, class:"input-default", id:"article-name", placeholder:"主題を記入", maxlength:"40" %>
+    <%= f.text_field :tag_list, value: @article.tag_list.join(','), class:"form-control", id:"article-info", placeholder:"タグ（,を追記して複数作成可能）" %>
+    <%= f.text_area :name, class:"form-control", id:"article-name", placeholder:"主題を記入", maxlength:"40" %>
   </div>
 
     <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">本文</label>
     </div>
-    <%= f.text_area :text, class:"input-default", id:"editor", placeholder:"本文を記入" %>
+    <%= f.text_area :text, class:"form-control", rows: "7", id:"editor", placeholder:"本文を記入" %>
   </div>
   <div class="form-btn">
     <%=f.select :progress, options_for_select_from_enum(Article, :progress) %>

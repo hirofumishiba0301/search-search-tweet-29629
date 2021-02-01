@@ -8,11 +8,7 @@
             <div class='tweet_content'>
               <div class='article-info'>
                 <div><%=link_to  user_path(article.user.id) do %>
-                  <% if article.user.user_image.attached? %>
-                    <%=image_tag article.user.user_image, class: "icon_small_image"%>
-                  <% else %>
                     <span><%= article.user.nickname %></span>
-                  <% end %>
                 <% end %>
                 </div>が
                   <span><%= l article.created_at %></span>に投稿

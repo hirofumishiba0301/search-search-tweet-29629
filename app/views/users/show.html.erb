@@ -1,4 +1,4 @@
-<%= render "shared/header"%>
+<%= render "shared/header" , locals:{ articles: @articles }%>
 <div class="margin">
 </div>
 <div class="d-flex flex-column flex-md-row  ">
@@ -7,7 +7,7 @@
       <% if @user.user_image.present? %>
         <%=image_tag @user.user_image, class: "icon_image"%>
         <div class="user-info">
-          <div class="user-name"><%=@user.nickname%></div>
+          <div class="h4 align-items-ceter "><%=@user.nickname%></div>
           <style>
             table, th, td {
               border-collapse: collapse;
@@ -53,21 +53,39 @@
     <% if user_signed_in? %>
     <div class="user-info">
       <% if @user.id == current_user.id %>
-        <%= button_to "プロフィール編集", edit_user_path, method: :get , class: "register-red-btn"%>
+        <%= button_to "プロフィール編集", edit_user_path, method: :get , class: "beta btn"%>
       <% else %>
         <%= render 'relationships/follow' %>
       <% end %>
     </div>
     <% end %>
   </div>
-  <div class="tabs">
-    <input id="article" type="radio" name="tab_item" cheked>
-    <label class="tab_item" for="article">新着記事</label>
-    <input id="tweet" type="radio" name="tab_item" cheked>
-    <label class="tab_item" for="tweet">ツイート</label>
-    <%= render partial:"shared/user_articles1", locals:{ articles: @articles, user: @user } %>
-    <%= render partial:"shared/user_articles2", locals:{ articles: @articles, user: @user } %>
+</div>  
+  <div class="accordion " id="accordion-4">
+  <div class="card">
+    <div class="card-header" id="header-4a">
+      <button class="btn btn-link beta" type="button" data-toggle="collapse" data-target="#card-4a" aria-expanded="true" aria-controls="card-4a">
+       新着記事
+      </button>
+    </div>
+    <div id="card-4a" class="collapse" aria-labelledby="header-4a" data-parent="#accordion-4">
+      <div class="card-body">
+        <%= render partial:"shared/user_articles1", locals:{ articles: @articles, user: @user } %>
+      </div>
+    </div>
   </div>
-</div>
+  <div class="card">
+    <div class="card-header" id="header-4b">
+      <button class="btn btn-link beta" type="button" data-toggle="collapse" data-target="#card-4b" aria-expanded="true" aria-controls="card-4b">
+       ツイート
+      </button>
+    </div>
+    <div id="card-4b" class="collapse" aria-labelledby="header-4b" data-parent="#accordion-4">
+      <div class="card-body">
+        <%= render partial:"shared/user_articles2", locals:{ articles: @articles, user: @user } %>
+      </div>
+    </div>
+  </div>
+
 
 <%= render "shared/footer"%>
