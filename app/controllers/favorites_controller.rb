@@ -1,5 +1,6 @@
 class FavoritesController < ApplicationController
   before_action :set_article, only:[:create, :destroy]
+  before_action :search_article
 
   def index
     @articles = Article.includes(:user).order('created_at DESC')
@@ -28,4 +29,11 @@ class FavoritesController < ApplicationController
   def set_article
     @article = Article.find(params[:article_id])
  end
+
+ private
+
+ def search_article
+  @q = Article.ransack(params[:q])
+ end
+
 end
