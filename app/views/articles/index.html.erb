@@ -37,6 +37,51 @@
           <% end %>
         </div>
 <% else %>
+<%#=image_tag "furima-intro02.png",class:"first-slide", src:"/800x400?auto=yes&bg=777&fg=555&text=SearchTweet", alt:"ZERO slide"%>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <%=image_tag "furima-intro02.png",class:"first-slide", src:"/800x400?auto=yes&bg=777&fg=555&text=SearchTweet", alt:"First slide"%>
+        <div class="container">
+          <div class="carousel-caption text-left">
+            <h1>What's SearchTweet.</h1>
+            <ul>
+            <li>調査して記事を書く</li>
+            <li>普段の調査活動をつぶやく</li>
+            <li>自己研鑽アプリです</li>
+            </ul>
+            <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <%=image_tag "furima-intro02.png",class:"second-slide", src:"/800x400?auto=yes&bg=777&fg=555&text=SearchTweet", alt:"Second slide"%>
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Let it BE!!</h1>
+            <ul>
+            <li>調査して記事を書く</li>
+            <li>普段の調査活動をつぶやく</li>
+            <li>自己研鑽アプリです</li>
+            </ul>
+            <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
 
 <div class="accordion d-flex" id="accordion-4">
   <div class="card">
