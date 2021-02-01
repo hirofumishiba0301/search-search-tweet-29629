@@ -4,11 +4,18 @@
     <% if  article.start? %>  
         <% if Favorite.find_by(user_id: current_user.id, article_id: article.id) %>
             <div class='article-content'>
+              <div class='d-flex'>
+                <div><%=link_to  user_path(article.user.id) do %>
+                <% if article.user.user_image.attached? %>
+                  <%=image_tag article.user.user_image, class: "rounded-circle", width:"30", height:"30" %>
+                <% else %>
+                  <span><%= article.user.nickname %></span>
+                <% end %>
+                <% end %>
+                </div>が
+                <span><%= l article.created_at %></span>に投稿
+              </div>
               <%= link_to article_path(article.id),method: :get do %>
-                <div class='article-info'>
-                  <div><%=article.user.nickname  %></div>が
-                  <span><%= l article.created_at %></span>に投稿
-                </div>
                 <div class='article-content'>
                   <h3><%= article.name  %></h3>
                 </div>
