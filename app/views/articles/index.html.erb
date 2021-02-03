@@ -1,4 +1,4 @@
-<%= render "shared/header",locals:{ articles: @articles } %>
+<%= render "shared/fixed_header",locals:{ articles: @articles } %>
 <% if @article.present? %>
 <h2 class='title'><%= "タグ:#{@tag} 検索結果" %></h2>
         <div class='article-contents'>
