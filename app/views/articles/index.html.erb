@@ -1,6 +1,4 @@
 <%= render "shared/header",locals:{ articles: @articles } %>
-<div class="margin">
-</div>
 <% if @article.present? %>
 <h2 class='title'><%= "タグ:#{@tag} 検索結果" %></h2>
         <div class='article-contents'>
@@ -10,7 +8,7 @@
                   <div class='article-info'>
                     <div><%=link_to  user_path(article.user.id) do %>
                     <% if article.user.user_image.attached? %>
-                      <%=image_tag article.user.user_image, class: "rounded-circle mx-auto d-block"  %>
+                      <%=image_tag article.user.user_image, class: "rounded-circle" , width:"30", height:"30"  %>
                     <% else %>
                       <span><%= article.user.nickname %></span>
                     <% end %>
@@ -37,7 +35,6 @@
           <% end %>
         </div>
 <% else %>
-<%#=image_tag "furima-intro02.png",class:"first-slide", src:"/800x400?auto=yes&bg=777&fg=555&text=SearchTweet", alt:"ZERO slide"%>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -45,7 +42,7 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <%=image_tag "furima-intro02.png",class:"first-slide", src:"/800x400?auto=yes&bg=777&fg=555&text=SearchTweet", alt:"First slide"%>
+        <%=image_tag "pexels-brady-knoll-5409751.jpg",class:"first-slide",width:1200 ,height:770 ,src:"/800x400?auto=yes&bg=777&fg=555&text=SearchTweet", alt:"First slide"%>
         <div class="container">
           <div class="carousel-caption text-left">
             <h1>What's SearchTweet.</h1>
@@ -59,10 +56,10 @@
         </div>
       </div>
       <div class="carousel-item">
-        <%=image_tag "furima-intro02.png",class:"second-slide", src:"/800x400?auto=yes&bg=777&fg=555&text=SearchTweet", alt:"Second slide"%>
+        <%=image_tag "pexels-tobias-bjørkli-2113566.jpg",class:"second-slide",width:1200 ,height:770, src:"/800x400?auto=yes&bg=777&fg=555&text=SearchTweet", alt:"Second slide"%>
         <div class="container">
-          <div class="carousel-caption">
-            <h1>Let it BE!!</h1>
+          <div class="carousel-caption text-left">
+            <h1>Let's join us!!</h1>
             <ul>
             <li>調査して記事を書く</li>
             <li>普段の調査活動をつぶやく</li>
@@ -83,7 +80,7 @@
     </a>
   </div>
 
-<div class="accordion d-flex" id="accordion-4">
+<div class="accordion d-flex flex-column" id="accordion-4">
   <div class="card">
     <div class="card-header" id="header-4a">
       <button class="btn btn-link beta" type="button" data-toggle="collapse" data-target="#card-4a" aria-expanded="true" aria-controls="card-4a">
