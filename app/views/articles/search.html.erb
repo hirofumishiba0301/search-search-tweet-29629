@@ -10,7 +10,7 @@
                   <div class='article-info'>
                     <div><%=link_to  user_path(article.user.id) do %>
                     <% if article.user.user_image.attached? %>
-                      <%=image_tag article.user.user_image, class: "icon_small_image"%>
+                      <%=image_tag article.user.user_image, class: "rounded-circle", width:"30", height:"30" %>
                     <% else %>
                       <span><%= article.user.nickname %></span>
                     <% end %>
