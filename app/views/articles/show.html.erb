@@ -1,34 +1,32 @@
 <%= render "shared/header"%>
-<div class="margin">
-</div>
 <div class='back'>
   <div class='show-btns'>
-    <ul class='show-btn'>
+    <ul class='d-flex justify-content-around'>
     <% if  user_signed_in? %>
       <% if @article.user.id == current_user.id %>
-        <li><%= button_to "編集", edit_article_path, method: :get , class: "register-red-btn"%> </li> 
-        <li><%= button_to '削除', article_path, method: :delete, class: "register-red-btn" %>
-        <li>                   
+        <div><%= button_to "編集", edit_article_path, method: :get , class: "beta btn"%> </div> 
+        <div><%= button_to '削除', article_path, method: :delete, class: "beta btn" %></div>
+        <div>                   
               <%= render partial: "goodjobs/goodjob", locals:{article: @article} %>
-        </li> 
-        <li><%= render partial: "favorites/favorite", locals:{article: @article} %></li>
+        </div> 
+        <div><%= render partial: "favorites/favorite", locals:{article: @article} %></div>
       <% else %>
-        <li>
+        <div>
           <div class='article-goodjob-counts' >
             <%= render partial: "goodjobs/goodjob", locals:{article: @article} %>
           </div>
-        </li> 
-        <li><%= render partial: "favorites/favorite", locals:{article: @article} %></li>
+        </div> 
+        <div><%= render partial: "favorites/favorite", locals:{article: @article} %></div>
       <% end %>
     <% end %>
     </ul>
   </div>
   <div class='article-contents'>
     <% if @article.present? %>
-            <div class='article-info'>
+            <div class='d-flex'>
               <div><%=link_to  user_path(@article.user.id) do %>
               <% if @article.user.user_image.attached? %>
-                <%=image_tag @article.user.user_image, class: "icon_small_image"%>
+                <%=image_tag @article.user.user_image, class: "rounded-circle" , width:"30", height:"30"%>
               <% else %>
                 <span><%= @article.user.nickname %></span>
               <% end %>
