@@ -13,7 +13,7 @@
     <% end %>
   <% end %>
   <div class='d-flex px-md-1'>
-      <ul class='d-flex row '>
+      <ul class='d-flex'>
           <% if user_signed_in? && current_user.id %>
             <div><%= link_to "しおり", user_favorites_path(current_user), method: :get , class: "p-2 btn beta"%> </div> 
             <div><%= link_to "+投稿", new_article_path, method: :get , class: "p-2 btn beta"%> </div> 
