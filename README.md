@@ -1,5 +1,35 @@
 # README
 
+# search-search-tweet-29629
+
+# アプリケーション概要
+- ブログ形式のアプリケーションです。
+- Mark down書式による記事投稿機能とツイート機能があります。
+- エンジニアが日々の情報収集している事をツイートして、記事にして整理するためのアプリケーションです。
+
+## アプリケーションURL
+- https://search-search-tweet-29629.herokuapp.com/articles
+
+## テスト用アカウント
+- id: dd@icloud.com
+- password: ddddddd2
+
+## 目指した課題解決
+
+## 洗い出した要件
+
+## 実装した機能
+
+## 実装予定の機能
+
+## データベース設計
+
+## ローカルでの動作方法
+
+
+
+
+
 
 ## users テーブル
 
@@ -59,14 +89,16 @@
 - belongs_to :user
 - has_many :articles
 
-## followers テーブル
+## relations テーブル
 
 | Column          | Type       | Options                        |
 | --------------- | -----------| ------------------------------ |
-| user            | references | foreign_key: true              |
+| follow_id       | integer    |                                |
+| follower_id     | integer    |                                |
 
 ### Association
-- belongs_to :user
+- belongs_to :follower, class_name: "User"
+- belongs_to :follow, class_name: "User"
 
 ## テーブル
 ### Association
