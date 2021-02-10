@@ -9,23 +9,34 @@
 
 ## アプリケーションURL
 - https://search-search-tweet-29629.herokuapp.com/articles
+- id: admin
+- pass: 29629
 
 ## テスト用アカウント
 - id: dd@icloud.com
 - password: ddddddd2
 
+## 利用方法
+- 
+
 ## 目指した課題解決
+- 
 
 ## 洗い出した要件
+- 
 
 ## 実装した機能
+- 
 
 ## 実装予定の機能
+- 
 
-## データベース設計
+## データベース設計(ER図)
+- 
 
 ## ローカルでの動作方法
-
+- Ruby ver.
+- 
 
 
 
