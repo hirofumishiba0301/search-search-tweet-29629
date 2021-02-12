@@ -37,24 +37,28 @@
 
 ## 実装した機能
 - ログイン機能
-
+![ログイン](https://user-images.githubusercontent.com/71271771/107730706-6c262480-6d37-11eb-97d0-70ca9d9b96bc.gif)
 - 記事・ツイート投稿機能（MD書式）
+![記事投稿](https://user-images.githubusercontent.com/71271771/107730783-9a0b6900-6d37-11eb-926c-39f820fbf811.gif)
 
 - ユーザーフォロー機能
 
 - 記事お気に入り（しおり）機能
+![いいね、お気に入り追加機能](https://user-images.githubusercontent.com/71271771/107730795-a8f21b80-6d37-11eb-80fd-dc59e51e6421.gif)
 
+![しおり一覧表示](https://user-images.githubusercontent.com/71271771/107730818-bd361880-6d37-11eb-8ce2-7ed120ad7ab8.gif)
 - いいね（Good）機能
-
+![いいね、お気に入り追加機能](https://user-images.githubusercontent.com/71271771/107730804-b1e2ed00-6d37-11eb-81e6-a90762d34c6a.gif)
 - 画像をドラッグ＆ドロップで貼り付け機能
+![画像挿入](https://user-images.githubusercontent.com/71271771/107730854-d63ec980-6d37-11eb-8d92-1bb0d8717e84.gif)
+- 記事検索機能(ransack)
+![記事検索機能](https://user-images.githubusercontent.com/71271771/107730893-eb1b5d00-6d37-11eb-85be-3dc374961289.gif)
+
 
 - タグ付け機能
 
-- 記事検索機能(ransack)
-
 - 記事下書き登録機能
 
-- 
 
 ## 実装予定の機能
 - 
