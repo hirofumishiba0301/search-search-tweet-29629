@@ -41,14 +41,19 @@
 - 記事・ツイート投稿機能（MD書式）
 ![記事投稿](https://user-images.githubusercontent.com/71271771/107730783-9a0b6900-6d37-11eb-926c-39f820fbf811.gif)
 
+
 - ユーザーフォロー機能
+![フォロー機能](https://user-images.githubusercontent.com/71271771/107732279-50bd1880-6d3b-11eb-8df9-7b6d5c6831aa.gif)
+
 
 - 記事お気に入り（しおり）機能
-![いいね、お気に入り追加機能](https://user-images.githubusercontent.com/71271771/107730795-a8f21b80-6d37-11eb-80fd-dc59e51e6421.gif)
-
 ![しおり一覧表示](https://user-images.githubusercontent.com/71271771/107730818-bd361880-6d37-11eb-8ce2-7ed120ad7ab8.gif)
+
+
 - いいね（Good）機能
 ![いいね、お気に入り追加機能](https://user-images.githubusercontent.com/71271771/107730804-b1e2ed00-6d37-11eb-81e6-a90762d34c6a.gif)
+
+
 - 画像をドラッグ＆ドロップで貼り付け機能
 ![画像挿入](https://user-images.githubusercontent.com/71271771/107730854-d63ec980-6d37-11eb-8d92-1bb0d8717e84.gif)
 - 記事検索機能(ransack)
