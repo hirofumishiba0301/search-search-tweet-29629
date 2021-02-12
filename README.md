@@ -17,13 +17,23 @@
 - password: ddddddd2
 
 ## 利用方法
-- 
+- ログイン→記事投稿→タイトル/タグ/本文記入→下書きから記事投稿に変更→投稿
+- トップページの記事をクリック→記事詳細クリック→goodをクリック→しおりクリック
+- ユーザーの写真クリック→フォローボタンクリック
 
 ## 目指した課題解決
-- 
+- MD書式で情報収集した内容をまとめる
+- 日々の情報収集活動をつぶやく
+- 他の人と情報収集活動を共有したい
 
 ## 洗い出した要件
-- 
+- MD書式による記事投稿機能で情報を整理する
+- 気になる記事を保存しておける機能
+- 参考になる人は登録しておける機能
+- いいね機能で評価の高い記事がわかるようにする
+- ユーザーの総いいね数、フォロワー数、記事投稿数を見て人気があるか指標にする
+- 日々のつぶやきを見て情報収集の参考にする
+- 下書きを保存しておける機能で書き途中でも大丈夫
 
 ## 実装した機能
 - ログイン機能
@@ -120,32 +130,5 @@
 - belongs_to :follower, class_name: "User"
 - belongs_to :follow, class_name: "User"
 
-## テーブル
-### Association
-
-## テーブル
-### Association
 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
